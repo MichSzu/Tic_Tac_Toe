@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.tic_tac_toe.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_startGameFragment"
+            app:destination="@id/startGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.tic_tac_toe.ui.dashboard.DashboardFragment"
+        android:label="@string/title_instruction"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.tic_tac_toe.ui.notifications.NotificationsFragment"
+        android:label="@string/title_standings"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/startGameFragment"
+        android:name="com.example.tic_tac_toe.ui.home.StartGameFragment"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game" >
+        <action
+            android:id="@+id/action_startGameFragment_to_boardFragment"
+            app:destination="@id/boardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.example.tic_tac_toe.ui.home.BoardFragment"
+        android:label="fragment_board"
+        tools:layout="@layout/fragment_board" >
+        <argument
+            android:name="player1_name"
+            app:argType="string"
+            android:defaultValue="test" />
+        <argument
+            android:name="player2_name"
+            app:argType="string"
+            android:defaultValue="test" />
+    </fragment>
+</navigation>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.tic_tac_toe.ui.home.BoardViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.BoardFragment"
+        android:background="@drawable/instruction_background">
+
+        <TextView
+            android:id="@+id/turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/confirm_text_size"
+            android:layout_marginLeft="@dimen/name_size"
+            android:layout_marginRight="@dimen/name_size"
+            android:text="@{viewModel.playerTurn}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/turn_text_size"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="@dimen/name_size"
+            android:layout_marginTop="@dimen/start_button_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/a1"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(a1)}"
+                    android:tag="0"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/a2"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(a2)}"
+                    android:tag="1"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/a3"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(a3)}"
+                    android:tag="2"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/a4"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(a4)}"
+                    android:tag="3"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/a5"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(a5)}"
+                    android:tag="4"></Button>
+
+            </LinearLayout>
+
+            <View style="@style/horizontalLine"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/b1"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(b1)}"
+                    android:tag="5"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/b2"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(b2)}"
+                    android:tag="6"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/b3"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(b3)}"
+                    android:tag="7"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/b4"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(b4)}"
+                    android:tag="8"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/b5"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(b5)}"
+                    android:tag="9"></Button>
+
+            </LinearLayout>
+
+            <View style="@style/horizontalLine"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/c1"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(c1)}"
+                    android:tag="10"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/c2"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(c2)}"
+                    android:tag="11"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/c3"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(c3)}"
+                    android:tag="12"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/c4"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(c4)}"
+                    android:tag="13"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/c5"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(c5)}"
+                    android:tag="14"></Button>
+
+            </LinearLayout>
+
+            <View style="@style/horizontalLine"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/d1"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(d1)}"
+                    android:tag="15"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/d2"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(d2)}"
+                    android:tag="16"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/d3"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(d3)}"
+                    android:tag="17"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/d4"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(d4)}"
+                    android:tag="18"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/d5"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(d5)}"
+                    android:tag="19"></Button>
+
+            </LinearLayout>
+
+            <View style="@style/horizontalLine"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/e1"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(e1)}"
+                    android:tag="20"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/e2"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(e2)}"
+                    android:tag="21"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/e3"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(e3)}"
+                    android:tag="22"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/e4"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(e4)}"
+                    android:tag="23"></Button>
+
+                <View style="@style/verticalLine"></View>
+
+                <Button
+                    android:id="@+id/e5"
+                    style="@style/column"
+                    android:onClick="@{() -> viewModel.boardClick(e5)}"
+                    android:tag="24"></Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/restart"
+            android:layout_width="@dimen/btn_w"
+            android:layout_height="@dimen/btn_h"
+            android:layout_marginTop="@dimen/confirm_text_size"
+            android:layout_marginRight="@dimen/start_button_margin"
+            android:onClick="@{() -> viewModel.restartGame(a1,a2,a3,a4,a5,b1,b2,b3,b4,b5,c1,c2,c3,c4,c5,d1,d2,d3,d4,d5,e1,e2,e3,e4,e5)}"
+            android:text="PLAY AGAIN\n(RESTART)"
+            android:textSize="@dimen/confirm_text_size"
+            android:backgroundTint="@color/purple_200"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

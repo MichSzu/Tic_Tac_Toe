@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Tic_Tac_Toe</string>
+    <string name="title_home">Home</string>
+    <string name="title_instruction">Instruction</string>
+    <string name="title_standings">Standings</string>
+    <string name="introduction"><b>Welcom to Tic Tac Toe game!\nTo start press button below</b></string>
+    <string name="start_game">PLAY</string>
+    <string name="instruction">Here is a quick instruction how to use this app:</string>
+    <string name="name1_hint"><b><font size="45" color="@color/white">Player 1 name</font></b></string>
+    <string name="name2_hint"><b><font size="45" color="@color/white">Player 2 name</font></b></string>
+    <string name="name">Name:</string>
+    <string name="score">Score:</string>
+    <string name="symbol">Symbol:</string>
+    <string name="top10">Top 10 players:</string>
+    <string name="p1_avatar">Choose Player 1 avatar:</string>
+    <string name="p2_avatar">Choose Player 2 avatar:</string>
+    <string name="start">START</string>
+    <string name="go_menu">GO BACK\nTO MENU</string>
+    <string name="play_again">PLAY\nAGAIN</string>
+    <string name="admob_app_id">ca-app-pub-7017394855603748~6139691264</string>
+    <string name="admob_banner_ad">ca-app-pub-7017394855603748/9950395020</string>
+    <string name="rules">To start game, click START in home fragment. Type players names and choose their icons (default color is yellow). If you have played that game before, put your name, score will be added to your profile (color that you have chosen at first time will stick with you till the end). Confirm players and press START button. You can restart game any moment. If you do not want to play anymore, just go back to menu. In the Standings fragment there is a list with our best 10 players. Have fun!</string>
+</resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.tic_tac_toe.ui.home.StartGameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.StartGameFragment"
+        android:background="@drawable/instruction_background">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textFieldPlayer1Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name1_hint"
+            android:padding="@dimen/player_name_padding"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="@dimen/instruction_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/ic_baseline_person_24"
+            app:startIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                android:text="@={viewModel.player1.name}"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/player1_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/icons_margin"
+            android:text="@string/p1_avatar"
+            android:textSize="@dimen/choose_avatar_text"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textFieldPlayer1Name" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayoutPlayer1AvatarList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:columnCount="4"
+            app:rowCount="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player1_avatar">
+
+
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textFieldPlayer2Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name2_hint"
+            android:padding="@dimen/player_name_padding"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="@dimen/instruction_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayoutPlayer1AvatarList"
+            app:startIconDrawable="@drawable/ic_baseline_person_24"
+            app:startIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                android:text="@={viewModel.player2.name}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/icons_margin"
+            android:text="@string/p2_avatar"
+            android:textSize="@dimen/choose_avatar_text"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textFieldPlayer2Name"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayoutPlayer2AvatarList" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayoutPlayer2AvatarList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:columnCount="4"
+            app:rowCount="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <Button
+            android:id="@+id/create_field"
+            android:layout_width="@dimen/start_button_width"
+            android:layout_height="@dimen/start_button_height"
+            android:layout_marginTop="@dimen/instruction_margin"
+            android:layout_marginRight="@dimen/start_button_margin"
+            android:text="@string/start"
+            android:textSize="@dimen/name_size"
+            android:backgroundTint="@color/orange"
+            android:onClick="@{() -> viewModel.goToBoardWithPlayersIds(viewModel.namesList[0], viewModel.namesList[1])}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayoutPlayer2AvatarList" />
+
+        <Button
+            android:id="@+id/confirm_players"
+            android:layout_width="@dimen/start_button_width"
+            android:layout_height="@dimen/start_button_height"
+            android:text="Confirm players"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginRight="@dimen/start_button_margin"
+            android:backgroundTint="@color/orange"
+            android:textSize="@dimen/confirm_text_size"
+            android:onClick="@{() -> viewModel.saveAddPlayerOrEdit()}"
+            app:layout_constraintEnd_toStartOf="@+id/create_field"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayoutPlayer2AvatarList" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
