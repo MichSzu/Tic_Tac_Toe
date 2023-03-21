@@ -1,3 +1,3 @@
 # Tic_Tac_Toe
 University project, written in Kotlin.
-2-4. Server sends question to all players, the first one to type correct answer gets a point. For incorrect answer -2 points. No answer 0 point. After 3 incorrect answers in a row, players is blocked for one round. If nobody sends correct answer in 5 seconds, the question is skipped. Single game consists of 10 questions.
+Mobile game for Android system. 5x5 tic tac toe game for 2 players, each of them pass his name and choose color of his symbol. There is a table with players stats.  
